@@ -160,7 +160,8 @@ install_mecab_python(){
         CFLAGS=-stdlib=libc++ $python -m pip install $at_user_site /tmp/mecab-python-0.996
     else
         # the gcc compiler has no such commandline option as -stdilb, so let's not use it. See discussion on #391.
-        $python -m pip install $at_user_site /tmp/mecab-python-0.996
+        # $python -m pip install $at_user_site /tmp/mecab-python-0.996
+        $python setup.py install --prefix=/tmp/mecab-python-0.996
     fi
 }
 
